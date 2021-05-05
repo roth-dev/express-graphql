@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "typeRoots": [
+      "@types",
+      "./node_modules/@types",
+      "./src/types/index.d.ts"
+    ]
+  }
+}
