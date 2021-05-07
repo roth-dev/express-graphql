@@ -1,4 +1,4 @@
-import 'dotenv'
+require('dotenv')
 import { socket } from '../socket'
 
 import express from 'express';
@@ -48,7 +48,7 @@ app.use((error: any, req: any, res: any, next: any) => {
     res.status(status).json({ message: message, data: data });
 });
 
-const port = parseInt(process.env.PORT);
+const port = process.env.PORT;
 
 mongoose
     .connect(

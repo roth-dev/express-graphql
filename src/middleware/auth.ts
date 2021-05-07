@@ -1,4 +1,4 @@
-import * as dotenv from 'dotenv'
+require('dotenv').config()
 import { Request, Response, NextFunction, RequestHandler } from 'express';
 import jwt from 'jsonwebtoken';
 
@@ -11,7 +11,7 @@ export const auth: any = (req: any, res: any, next: any) => {
     const token = authHeader.split(' ')[1];
     let decodedToken: any;
     try {
-        decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+        decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET!);
     } catch (err) {
         req.isAuth = false;
         return next();
